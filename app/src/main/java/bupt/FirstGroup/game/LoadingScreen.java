@@ -27,6 +27,7 @@ public class LoadingScreen extends Screen {
     public void update(float deltaTime) {
         Graphics g = game.getGraphics();
         //加载图片资源
+        Assets.scale = g.newImage(IMAGE_PATH+"scale1.png",Graphics.ImageFormat.RGB565);
         Assets.background = g.newImage(IMAGE_PATH + "background4.png", Graphics.ImageFormat.RGB565);
         Assets.placeholder =g.newImage(IMAGE_PATH+"placeholder.png",Graphics.ImageFormat.RGB565);
         Assets.hpframe= g.newImage(IMAGE_PATH+"hp.png",Graphics.ImageFormat.RGB565);

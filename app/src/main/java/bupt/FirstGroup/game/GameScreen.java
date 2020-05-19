@@ -167,8 +167,8 @@ public class GameScreen extends Screen {
         // Initialize game objects
         _gameHeight = game.getGraphics().getHeight();
         _gameWidth = game.getGraphics().getWidth();
-        Log.i("gameObj","="+_gameHeight);
-        Log.i("gameObj","="+_gameWidth);
+        Log.i("gameObj", "=" + _gameHeight);
+        Log.i("gameObj", "=" + _gameWidth);
         _vibrator = game.getVibrator();
         _multiplier = 1;
         _doubleMultiplierTicker = 0;
@@ -192,14 +192,15 @@ public class GameScreen extends Screen {
         // paints for text
 
         _paintScore = new Paint();
-        _paintScore.setTextSize(150);
-		_paintScore.setTextSkewX(-0.5f);
-		_paintScore.setFakeBoldText(true);
+        _paintScore.setTextSize(70);
+        _paintScore.setTextSkewX(-0.5f);
+        _paintScore.setFakeBoldText(true);
         _paintScore.setTextAlign(Paint.Align.CENTER);
         _paintScore.setAntiAlias(true);
-        _paintScore.setColor(Color.WHITE);
+        _paintScore.setColor(Color.WHITE);//颜色
+        _paintScore.setFlags(Paint.ANTI_ALIAS_FLAG);//消除齿距
         //Typeface typeface=Typeface.createFromAsset(getContext().getAssets(),"font/st.ttf");
-       // _paintScore.setTypeface(typeface);
+        // _paintScore.setTypeface(typeface);
 
 
         _paintGameover = new Paint();
@@ -277,22 +278,22 @@ public class GameScreen extends Screen {
         SharedPreferences prefs = fileIO.getSharedPref();
         int oldScore;
 
-        switch(_difficulty.getMode()) {
+        switch (_difficulty.getMode()) {
             case Difficulty.EASY_TAG:
-                oldScore = prefs.getInt(Difficulty.EASY_TAG,0);
+                oldScore = prefs.getInt(Difficulty.EASY_TAG, 0);
                 break;
             case Difficulty.MED_TAG:
-                oldScore = prefs.getInt(Difficulty.MED_TAG,0);
+                oldScore = prefs.getInt(Difficulty.MED_TAG, 0);
                 break;
             case Difficulty.HARD_TAG:
-                oldScore = prefs.getInt(Difficulty.HARD_TAG,0);
+                oldScore = prefs.getInt(Difficulty.HARD_TAG, 0);
                 break;
             default:
                 oldScore = 0;
                 break;
         }
 
-        if(_score > oldScore) {
+        if (_score > oldScore) {
             SharedPreferences.Editor editor = prefs.edit();
             editor.putInt(_difficulty.getMode(), _score);
             editor.apply();
@@ -313,20 +314,16 @@ public class GameScreen extends Screen {
                             // if no ball was hit
                             _laneHitAlphaLeft = MISS_FLASH_INITIAL_ALPHA;
                         }
-                    }
-                    else if (event.x < _gameWidth / 3 * 2) {
-                        if (!hitLane(_ballsMiddle))
-                        {
+                    } else if (event.x < _gameWidth / 3 * 2) {
+                        if (!hitLane(_ballsMiddle)) {
                             _laneHitAlphaMiddle = MISS_FLASH_INITIAL_ALPHA;
                         }
-                    }
-                    else {
+                    } else {
                         if (!hitLane(_ballsRight)) {
                             _laneHitAlphaRight = MISS_FLASH_INITIAL_ALPHA;
                         }
                     }
-                }
-                else {
+                } else {
                     // pause area
                     touchEvents.clear();
                     pause();
@@ -342,15 +339,15 @@ public class GameScreen extends Screen {
         _currentTime += deltatime;
 
         // update ball position
-        for (Ball b: _ballsLeft) {
+        for (Ball b : _ballsLeft) {
             b.update((int) (_ballSpeed * deltatime));
         }
 
-        for (Ball b: _ballsMiddle) {
+        for (Ball b : _ballsMiddle) {
             b.update((int) (_ballSpeed * deltatime));
         }
 
-        for (Ball b: _ballsRight) {
+        for (Ball b : _ballsRight) {
             b.update((int) (_ballSpeed * deltatime));
         }
 
@@ -440,7 +437,7 @@ public class GameScreen extends Screen {
 
     // triggers when a lane gets tapped that has currently no ball in its hitbox
     private void onMiss(Ball b) {
-        if(b != null && b.type == Ball.BallType.Skull) {
+        if (b != null && b.type == Ball.BallType.Skull) {
             return;
         }
         _vibrator.vibrate(100);
@@ -454,17 +451,20 @@ public class GameScreen extends Screen {
     // triggers when a lane gets tapped that currently has a ball in its hitbox
     private void onHit(Ball b) {
         _streak++;
-        switch(b.type) {
+        switch (b.type) {
             case OneUp: {
                 ++_lifes;
-            } break;
+            }
+            break;
             case Multiplier: {
                 _doubleMultiplierTicker = DOUBLE_MULTIPLIER_TIME;
-            } break;
+            }
+            break;
             case Bomb: {
                 _explosionTicker = EXPLOSION_TIME;
                 Assets.soundExplosion.play(0.7f);
-            } break;
+            }
+            break;
             case Skull: {
                 onMiss(null); // hitting a skull counts as a miss
                 Assets.soundCreepyLaugh.play(1);
@@ -481,20 +481,15 @@ public class GameScreen extends Screen {
     private void updateMultipliers() {
         if (_streak > 80) {
             _multiplier = 10;
-        }
-        else if (_streak > 40) {
+        } else if (_streak > 40) {
             _multiplier = 5;
-        }
-        else if (_streak > 30) {
+        } else if (_streak > 30) {
             _multiplier = 4;
-        }
-        else if (_streak > 20) {
+        } else if (_streak > 20) {
             _multiplier = 3;
-        }
-        else if (_streak > 10) {
+        } else if (_streak > 10) {
             _multiplier = 2;
-        }
-        else {
+        } else {
             _multiplier = 1;
         }
     }
@@ -574,17 +569,18 @@ public class GameScreen extends Screen {
         // First draw the game elements.
         // Example:
         g.drawImage(Assets.background, 0, 0);
-        g.drawImage(Assets.placeholder,_gameWidth/2-Assets.placeholder.getWidth()/2,0);
-
-        for (Ball b: _ballsLeft) {
+        g.drawImage(Assets.placeholder, _gameWidth / 2 - Assets.placeholder.getWidth() / 2, 0);
+        g.drawImage(Assets.scale, _gameWidth / 2 - (Assets.placeholder.getWidth() / 20 * 9), _gameHeight-Assets.scale.getHeight());
+        g.drawImage(Assets.scale, _gameWidth / 2 + Assets.placeholder.getWidth() / 19, _gameHeight-Assets.scale.getHeight());
+        for (Ball b : _ballsLeft) {
             paintBall(g, b);
         }
 
-        for (Ball b: _ballsMiddle) {
+        for (Ball b : _ballsMiddle) {
             paintBall(g, b);
         }
 
-        for (Ball b: _ballsRight) {
+        for (Ball b : _ballsRight) {
             paintBall(g, b);
         }
 
@@ -594,7 +590,7 @@ public class GameScreen extends Screen {
             } else {
                 g.drawImage(Assets.explosionBright, 0, 680);
             }
-            g.drawARGB((int)((double)_explosionTicker/EXPLOSION_TIME * 255), 255, 255, 255);
+            g.drawARGB((int) ((double) _explosionTicker / EXPLOSION_TIME * 255), 255, 255, 255);
         }
         // Secondly, draw the UI above the game elements.
         if (state == GameState.Ready)
@@ -608,7 +604,7 @@ public class GameScreen extends Screen {
     }
 
     private void paintBall(Graphics g, Ball b) {
-        switch(b.type) {
+        switch (b.type) {
             case Normal:
                 g.drawImage(Assets.ballNormal, b.x - 90, b.y - 90);
                 break;
@@ -622,7 +618,7 @@ public class GameScreen extends Screen {
                 g.drawImage(Assets.ballSpeeder, b.x - 90, b.y - 90);
                 break;
             case Bomb:
-                g.drawImage(Assets.ballBomb,  b.x - 90, b.y - 90);
+                g.drawImage(Assets.ballBomb, b.x - 90, b.y - 90);
                 break;
             case Skull:
                 g.drawImage(Assets.ballSkull, b.x - 90, b.y - 90);
@@ -644,24 +640,25 @@ public class GameScreen extends Screen {
         Graphics g = game.getGraphics();
 
         g.drawARGB(155, 0, 0, 0);
-        g.drawString("Tap to start!", _gameWidth/2, _gameHeight/2, _paintScore);
+        g.drawString("Tap to start!", _gameWidth / 2, _gameHeight / 2, _paintScore);
     }
 
     private void drawRunningUI() {
         Graphics g = game.getGraphics();
-        g.drawImage(Assets.toprect,_gameWidth/2-Assets.toprect.getWidth()/2,0);
-        g.drawImage(Assets.hpframe,Assets.placeholder.getWidth()/8,Assets.toprect.getHeight()/3);
-        g.drawImage(Assets.hp,Assets.placeholder.getWidth()/8,Assets.toprect.getHeight()/3);
-        g.drawImage(Assets.score,_gameWidth/2+Assets.placeholder.getWidth(),Assets.toprect.getHeight()/6);
-        g.drawImage(Assets.pause,_gameWidth/2-Assets.pause.getWidth()/2,0);
+        g.drawImage(Assets.toprect, _gameWidth / 2 - Assets.toprect.getWidth() / 2, 0);
+        g.drawImage(Assets.hpframe, Assets.placeholder.getWidth() / 8,
+                Assets.toprect.getHeight() / 3);
+        g.drawImage(Assets.hp, Assets.placeholder.getWidth() / 8,
+                Assets.toprect.getHeight() / 3);
+        g.drawImage(Assets.score, _gameWidth / 2 + Assets.placeholder.getWidth(),
+                Assets.toprect.getHeight() / 6);
+        g.drawImage(Assets.pause, _gameWidth / 2 - Assets.pause.getWidth() / 2, 0);
         if (_doubleMultiplierTicker > 0) {
             g.drawImage(Assets.sirens, 0, 100);
         }
-
-      //  g.drawRect(0, 0, _gameWidth, 100, Color.BLACK);
-
-      //String s = "Score: " + _score +"   Multiplier: " + _multiplier * (_doubleMultiplierTicker > 0 ? 2 : 1) + "x" +"   Lifes remaining: " + _lifes;
-        //g.drawString(s, 600, 80, _paintScore);
+        g.drawString(String.valueOf(10000),
+                _gameWidth / 2 + Assets.placeholder.getWidth() + Assets.score.getWidth()+70,
+                Assets.toprect.getHeight() - Assets.hp.getHeight(), _paintScore);
     }
 
     private void drawPausedUI() {
@@ -675,7 +672,7 @@ public class GameScreen extends Screen {
         Graphics g = game.getGraphics();
         //g.drawARGB(205, 0, 0, 0);
         //g.drawImage(Assets.gameover, 200, 500);
-       // g.drawString("FINAL SCORE: " + _score, 540, 845, _paintGameover);
+        // g.drawString("FINAL SCORE: " + _score, 540, 845, _paintGameover);
     }
 
     @Override
@@ -697,7 +694,7 @@ public class GameScreen extends Screen {
 
     @Override
     public void dispose() {
-        if(_currentTrack.isPlaying()) {
+        if (_currentTrack.isPlaying()) {
             _currentTrack.stop();
         }
     }
