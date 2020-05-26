@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="true">
+    <item android:drawable="@drawable/click_screen1" android:duration="100"/>
+    <item android:drawable="@drawable/click_screen2" android:duration="100"/>
+    <item android:drawable="@drawable/click_screen3" android:duration="100"/>
+    <item android:drawable="@drawable/click_screen4" android:duration="100"/>
+    <item android:drawable="@drawable/click_screen5" android:duration="100"/>
+    <item android:drawable="@drawable/click_screen6" android:duration="100"/>
+    <item android:drawable="@drawable/click_screen7" android:duration="100"/>
+    <item android:drawable="@drawable/click_screen8" android:duration="100"/>
+    <item android:drawable="@drawable/click_screen9" android:duration="100"/>
+    <item android:drawable="@drawable/click_screen10" android:duration="100"/>
+    <item android:drawable="@drawable/click_screen11" android:duration="100"/>
+    <item android:drawable="@drawable/click_screen12" android:duration="100"/>
+    <item android:drawable="@drawable/click_screen13" android:duration="100"/>
+    <item android:drawable="@drawable/click_screen14" android:duration="100"/>
+    <item android:drawable="@drawable/click_screen15" android:duration="100"/>
+    <item android:drawable="@drawable/click_screen16" android:duration="100"/>
+    <item android:drawable="@drawable/click_screen17" android:duration="100"/>
+    <item android:drawable="@drawable/click_screen18" android:duration="100"/>
+    <item android:drawable="@drawable/click_screen19" android:duration="100"/>
+    <item android:drawable="@drawable/click_screen20" android:duration="100"/>
+    <item android:drawable="@drawable/click_screen21" android:duration="100"/>
+    <item android:drawable="@drawable/click_screen22" android:duration="100"/>
+    <item android:drawable="@drawable/click_screen23" android:duration="100"/>
+    <item android:drawable="@drawable/click_screen24" android:duration="100"/>
+    <item android:drawable="@drawable/click_screen25" android:duration="100"/>
+    <item android:drawable="@drawable/click_screen26" android:duration="100"/>
+    <item android:drawable="@drawable/click_screen27" android:duration="100"/>
+    <item android:drawable="@drawable/click_screen28" android:duration="100"/>
+    <item android:drawable="@drawable/click_screen29" android:duration="100"/>
+    <item android:drawable="@drawable/click_screen30" android:duration="100"/>
+    <item android:drawable="@drawable/click_screen32" android:duration="100"/>
+    <item android:drawable="@drawable/click_screen34" android:duration="100"/>
+
+</animation-list>

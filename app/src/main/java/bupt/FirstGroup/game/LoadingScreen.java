@@ -26,8 +26,12 @@ public class LoadingScreen extends Screen {
     @Override
     public void update(float deltaTime) {
         Graphics g = game.getGraphics();
+        //加载特效资源，暂空
+
+        //加载按钮资源
+        Assets.flower_key1=g.newImage(IMAGE_PATH+"flower_key_1.png",Graphics.ImageFormat.ARGB4444);
         //加载图片资源
-        Assets.scale = g.newImage(IMAGE_PATH+"scale1.png",Graphics.ImageFormat.RGB565);
+        Assets.scale = g.newImage(IMAGE_PATH+"scale_1.png",Graphics.ImageFormat.RGB565);
         Assets.background = g.newImage(IMAGE_PATH + "background4.png", Graphics.ImageFormat.RGB565);
         Assets.placeholder =g.newImage(IMAGE_PATH+"placeholder.png",Graphics.ImageFormat.RGB565);
         Assets.hpframe= g.newImage(IMAGE_PATH+"hp.png",Graphics.ImageFormat.RGB565);
@@ -38,7 +42,8 @@ public class LoadingScreen extends Screen {
         Assets.pauseclicked = g.newImage(IMAGE_PATH + "pauseclicked.png", Graphics.ImageFormat.RGB565);
         Assets.score = g.newImage(IMAGE_PATH + "score.png", Graphics.ImageFormat.RGB565);
         Assets.streak = g.newImage(IMAGE_PATH + "streak.png", Graphics.ImageFormat.RGB565);
-        Assets.ballNormal = g.newImage(IMAGE_PATH + "ball_normal.png", Graphics.ImageFormat.RGB565);
+
+        Assets.ballNormal = g.newImage(IMAGE_PATH + "key_cut.png", Graphics.ImageFormat.RGB565);
         Assets.ballMultiplier = g.newImage(IMAGE_PATH + "ball_multiplier.png", Graphics.ImageFormat.RGB565);
         Assets.ballOneUp = g.newImage(IMAGE_PATH + "ball_oneup.png", Graphics.ImageFormat.RGB565);
         Assets.ballSpeeder = g.newImage(IMAGE_PATH + "ball_speeder.png", Graphics.ImageFormat.RGB565);

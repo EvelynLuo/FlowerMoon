@@ -1,19 +1,24 @@
 package bupt.FirstGroup.framework;
 
+import android.animation.Animator;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Paint;
+
+import bupt.FirstGroup.framework.impl.ButtonImage;
 
 /**
  * Created by Peter on 23.01.2017.
  */
 public interface Graphics {
-    void drawScaledImage(Image placeholder, int i, int i1);
 
     public static enum ImageFormat {
         ARGB8888, ARGB4444, RGB565
     }
 
     public Image newImage(String fileName, ImageFormat format);
+
+//    public ButtonImage newButtonImage(String fileName, ImageFormat format, int x, int y, Animator animator_hit_1, Animator animator_hit_2, Animator animator_disapear);
 
     public void clearScreen(int color);
 

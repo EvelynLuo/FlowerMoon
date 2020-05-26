@@ -31,13 +31,14 @@ public class RTFastRenderView extends SurfaceView implements Runnable {
     }
 
     public void run() {
-        Rect dstRect = new Rect(0,0,2357,1312);
+//        Rect dstRect = new Rect(0,0,2357,1312);
+        Rect dstRect=new Rect();
         long startTime = System.nanoTime();
         while(running) {
             if(!holder.getSurface().isValid())
                 continue;
 
-
+            //deltaTime每个间隔是10ms
             float deltaTime = (System.nanoTime() - startTime) / 10000000.000f;
             startTime = System.nanoTime();
 
@@ -50,7 +51,7 @@ public class RTFastRenderView extends SurfaceView implements Runnable {
             game.getCurrentScreen().paint(deltaTime);
 
 
-
+            /*将当前framebuffer这张图放在每一帧的view上面*/
             Canvas canvas = holder.lockCanvas();
             canvas.getClipBounds(dstRect);
             canvas.drawBitmap(framebuffer, null, dstRect, null);

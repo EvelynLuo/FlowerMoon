@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
@@ -9,36 +9,77 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="bupt.FirstGroup.MainActivity">
+    tools:context="bupt.FirstGroup.MainActivity"
+    android:orientation="vertical"
+    android:background="@drawable/background1">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:padding="20dp"
-        >
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
 
-        <Button
-            android:text="@string/main_btn_start"
-            android:layout_width="match_parent"
+        <ImageButton
+            android:id="@+id/main_first_button"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/main_btn_start"
-            android:background="@android:color/holo_green_dark" />
+            android:layout_marginTop="10dp"
+            android:background="@drawable/level1clicked"/>
 
-        <Button
-            android:text="@string/main_btn_highscore"
-            android:layout_width="match_parent"
+        <ImageButton
+            android:id="@+id/main_second_button"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/main_btn_highscore" />
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/level2clicked"/>
 
-        <Button
-            android:layout_width="match_parent"
+        <ImageButton
+            android:id="@+id/main_third_button"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/main_btn_about"
-            android:text="@string/main_btn_about" />
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/level3clicked"/>
+
     </LinearLayout>
-</RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal">
+
+        <ImageButton
+            android:id="@+id/main_about_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/about1"/>
+
+        <ImageButton
+            android:id="@+id/main_start_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/start_btn1" />
+
+        <ImageButton
+            android:id="@+id/main_highscore_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/score1"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:text="登录注册" />
+
+
+</LinearLayout>

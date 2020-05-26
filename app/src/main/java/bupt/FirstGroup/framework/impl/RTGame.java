@@ -8,16 +8,14 @@ import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
-import android.graphics.Matrix;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
 import android.os.Vibrator;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
-import bupt.FirstGroup.game.*;
+
 import bupt.FirstGroup.framework.Audio;
 import bupt.FirstGroup.framework.FileIO;
 import bupt.FirstGroup.framework.Game;
@@ -50,7 +48,7 @@ public class RTGame extends Activity implements Game {
 
         //获取窗口大小
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);//锁定横向
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -58,20 +56,10 @@ public class RTGame extends Activity implements Game {
         boolean isPortrait = getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT;
         //???
         Log.i("game", String.valueOf(isPortrait));
-        //int frameBufferWidth = 1920;
-        //int frameBufferHeight = 1080;
-        //图片4长宽比2357x1329
-        //bg2 1140x640
-        //bg3 2288x1292
-        int frameBufferWidth = 2357;
 
-        int frameBufferHeight = 1312;
+        int frameBufferWidth = getWindowManager().getDefaultDisplay().getWidth();
+        int frameBufferHeight = getWindowManager().getDefaultDisplay().getHeight();
 
-
-        DisplayMetrics dm = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(dm);
-        int width = dm.widthPixels;//屏幕的宽
-        int height= dm.heightPixels;//屏幕的高
         Bitmap frameBuffer = Bitmap.createBitmap(frameBufferWidth,
                 frameBufferHeight, Config.RGB_565);
 
@@ -91,14 +79,12 @@ public class RTGame extends Activity implements Game {
         //渲染view视图
         renderView = new RTFastRenderView(this, frameBuffer);
         //渲染画布
-
         graphics = new RTGraphics(getAssets(), frameBuffer);
         //文件读写
         fileIO = new RTFileIO(this);
         //音频
         audio = new RTAudio(this);
         //触屏事件（很肝的感觉
-        //input = new RTInput(this, renderView, scaleWidth, scaleHeight);
         input = new RTInput(this, renderView, scaleX, scaleY);
         //当前活动screen，在子类中重写了，调用的是game.LoadingScreen
         screen = getInitScreen();

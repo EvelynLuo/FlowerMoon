@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="true">
+    <item android:drawable="@drawable/great_click1" android:duration="100"/>
+    <item android:drawable="@drawable/great_click2" android:duration="100"/>
+    <item android:drawable="@drawable/great_click3" android:duration="100"/>
+    <item android:drawable="@drawable/great_click4" android:duration="100"/>
+    <item android:drawable="@drawable/great_click5" android:duration="100"/>
+    <item android:drawable="@drawable/great_click6" android:duration="100"/>
+    <item android:drawable="@drawable/great_click7" android:duration="100"/>
+    <item android:drawable="@drawable/great_click8" android:duration="100"/>
+    <item android:drawable="@drawable/great_click9" android:duration="100"/>
+    <item android:drawable="@drawable/great_click10" android:duration="100"/>
+    <item android:drawable="@drawable/great_click11" android:duration="100"/>
+    <item android:drawable="@drawable/great_click12" android:duration="100"/>
+    <item android:drawable="@drawable/great_click13" android:duration="100"/>
+    <item android:drawable="@drawable/great_click14" android:duration="100"/>
+    <item android:drawable="@drawable/great_click15" android:duration="100"/>
+    <item android:drawable="@drawable/great_click16" android:duration="100"/>
+    <item android:drawable="@drawable/great_click17" android:duration="100"/>
+    <item android:drawable="@drawable/great_click18" android:duration="100"/>
+    <item android:drawable="@drawable/great_click19" android:duration="100"/>
+    <item android:drawable="@drawable/great_click20" android:duration="100"/>
+    <item android:drawable="@drawable/great_click21" android:duration="100"/>
+    <item android:drawable="@drawable/great_click22" android:duration="100"/>
+    <item android:drawable="@drawable/great_click23" android:duration="100"/>
+
+</animation-list>
