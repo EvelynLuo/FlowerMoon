@@ -42,9 +42,9 @@ public class HighscoreActivity extends AppCompatActivity {
 
         //_highscoreView = (ListView)this.findViewById(R.id.highscore_list_view);
 
-        _easyTxtView = (TextView)this.findViewById(R.id.highscore_txt_score_easy);
-        _medTxtView = (TextView)this.findViewById(R.id.highscore_txt_score_medium);
-        _hardTxtView = (TextView)this.findViewById(R.id.highscore_txt_score_hard);
+        _easyTxtView = (TextView)this.findViewById(R.id.tv_score1);
+        _medTxtView = (TextView)this.findViewById(R.id.tv_score2);
+        _hardTxtView = (TextView)this.findViewById(R.id.tv_score3);
 
         // load highscores
         _prefs = PreferenceManager.getDefaultSharedPreferences(this);

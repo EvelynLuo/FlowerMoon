@@ -77,11 +77,11 @@ public class MainActivity extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction()==MotionEvent.ACTION_DOWN){//点击按钮
                     //重新设置按下去时的按钮图片
-                    ((ImageButton)v).setImageDrawable(getResources().getDrawable(R.drawable.start_btn2));
+                    ((ImageButton)v).setImageDrawable(getResources().getDrawable(R.mipmap.start_btn2));
                 }
                 else if (event.getAction()==MotionEvent.ACTION_UP){//松开按钮
                     //再修改为正常抬起时的图片
-                    ((ImageButton)v).setImageDrawable(getResources().getDrawable(R.drawable.start_btn1));
+                    ((ImageButton)v).setImageDrawable(getResources().getDrawable(R.mipmap.start_btn1));
                 }
                 return false;
             }
@@ -92,11 +92,11 @@ public class MainActivity extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction()==MotionEvent.ACTION_DOWN){//点击按钮
                     //重新设置按下去时的按钮图片
-                    ((ImageButton)v).setImageDrawable(getResources().getDrawable(R.drawable.score2));
+                    ((ImageButton)v).setImageDrawable(getResources().getDrawable(R.mipmap.score2));
                 }
                 else if (event.getAction()==MotionEvent.ACTION_UP){//松开按钮
                     //再修改为正常抬起时的图片
-                    ((ImageButton)v).setImageDrawable(getResources().getDrawable(R.drawable.score1));
+                    ((ImageButton)v).setImageDrawable(getResources().getDrawable(R.mipmap.score1));
                 }
                 return false;
             }
@@ -107,11 +107,11 @@ public class MainActivity extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction()==MotionEvent.ACTION_DOWN){//点击按钮
                     //重新设置按下去时的按钮图片
-                    ((ImageButton)v).setImageDrawable(getResources().getDrawable(R.drawable.about2));
+                    ((ImageButton)v).setImageDrawable(getResources().getDrawable(R.mipmap.about2));
                 }
                 else if (event.getAction()==MotionEvent.ACTION_UP){//松开按钮
                     //再修改为正常抬起时的图片
-                    ((ImageButton)v).setImageDrawable(getResources().getDrawable(R.drawable.about1));
+                    ((ImageButton)v).setImageDrawable(getResources().getDrawable(R.mipmap.about1));
                 }
                 return false;
             }
@@ -122,11 +122,11 @@ public class MainActivity extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction()==MotionEvent.ACTION_DOWN){//点击按钮
                     //重新设置按下去时的按钮图片
-                    ((ImageButton)v).setImageDrawable(getResources().getDrawable(R.drawable.level1unclicked));
+                    ((ImageButton)v).setImageDrawable(getResources().getDrawable(R.mipmap.level1unclicked));
                 }
                 else if (event.getAction()==MotionEvent.ACTION_UP){//松开按钮
                     //再修改为正常抬起时的图片
-                    ((ImageButton)v).setImageDrawable(getResources().getDrawable(R.drawable.level1clicked));
+                    ((ImageButton)v).setImageDrawable(getResources().getDrawable(R.mipmap.level1clicked));
                 }
                 return false;
             }
@@ -137,11 +137,11 @@ public class MainActivity extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction()==MotionEvent.ACTION_DOWN){//点击按钮
                     //重新设置按下去时的按钮图片
-                    ((ImageButton)v).setImageDrawable(getResources().getDrawable(R.drawable.level2unclicked));
+                    ((ImageButton)v).setImageDrawable(getResources().getDrawable(R.mipmap.level2unclicked));
                 }
                 else if (event.getAction()==MotionEvent.ACTION_UP){//松开按钮
                     //再修改为正常抬起时的图片
-                    ((ImageButton)v).setImageDrawable(getResources().getDrawable(R.drawable.level2clicked));
+                    ((ImageButton)v).setImageDrawable(getResources().getDrawable(R.mipmap.level2clicked));
                 }
                 return false;
             }
@@ -152,11 +152,11 @@ public class MainActivity extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction()==MotionEvent.ACTION_DOWN){//点击按钮
                     //重新设置按下去时的按钮图片
-                    ((ImageButton)v).setImageDrawable(getResources().getDrawable(R.drawable.level3unclicked));
+                    ((ImageButton)v).setImageDrawable(getResources().getDrawable(R.mipmap.level3unclicked));
                 }
                 else if (event.getAction()==MotionEvent.ACTION_UP){//松开按钮
                     //再修改为正常抬起时的图片
-                    ((ImageButton)v).setImageDrawable(getResources().getDrawable(R.drawable.level3clicked));
+                    ((ImageButton)v).setImageDrawable(getResources().getDrawable(R.mipmap.level3clicked));
                 }
                 return false;
             }

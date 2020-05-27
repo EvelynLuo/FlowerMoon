@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animation-list xmlns:android="http://schemas.android.com/apk/res/android"
     android:oneshot="true">
-    <item android:drawable="@drawable/perfect_hit1" android:duration="100"/>
-    <item android:drawable="@drawable/perfect_hit2" android:duration="100"/>
-    <item android:drawable="@drawable/perfect_hit3" android:duration="100"/>
-    <item android:drawable="@drawable/perfect_hit4" android:duration="100"/>
-    <item android:drawable="@drawable/perfect_hit5" android:duration="100"/>
-    <item android:drawable="@drawable/perfect_hit6" android:duration="100"/>
-    <item android:drawable="@drawable/perfect_hit7" android:duration="100"/>
-    <item android:drawable="@drawable/perfect_hit8" android:duration="100"/>
-    <item android:drawable="@drawable/perfect_hit9" android:duration="100"/>
-    <item android:drawable="@drawable/perfect_hit10" android:duration="100"/>
-    <item android:drawable="@drawable/perfect_hit11" android:duration="100"/>
-    <item android:drawable="@drawable/perfect_hit12" android:duration="100"/>
-    <item android:drawable="@drawable/perfect_hit13" android:duration="100"/>
-    <item android:drawable="@drawable/perfect_hit14" android:duration="100"/>
-    <item android:drawable="@drawable/perfect_hit15" android:duration="100"/>
-    <item android:drawable="@drawable/perfect_hit16" android:duration="100"/>
-    <item android:drawable="@drawable/perfect_hit17" android:duration="100"/>
-    <item android:drawable="@drawable/perfect_hit18" android:duration="100"/>
-    <item android:drawable="@drawable/perfect_hit19" android:duration="100"/>
-    <item android:drawable="@drawable/perfect_hit20" android:duration="100"/>
-    <item android:drawable="@drawable/perfect_hit21" android:duration="100"/>
-    <item android:drawable="@drawable/perfect_hit22" android:duration="100"/>
-    <item android:drawable="@drawable/perfect_hit23" android:duration="100"/>
+    <item android:drawable="@mipmap/perfect_hit1" android:duration="100"/>
+    <item android:drawable="@mipmap/perfect_hit2" android:duration="100"/>
+    <item android:drawable="@mipmap/perfect_hit3" android:duration="100"/>
+    <item android:drawable="@mipmap/perfect_hit4" android:duration="100"/>
+    <item android:drawable="@mipmap/perfect_hit5" android:duration="100"/>
+    <item android:drawable="@mipmap/perfect_hit6" android:duration="100"/>
+    <item android:drawable="@mipmap/perfect_hit7" android:duration="100"/>
+    <item android:drawable="@mipmap/perfect_hit8" android:duration="100"/>
+    <item android:drawable="@mipmap/perfect_hit9" android:duration="100"/>
+    <item android:drawable="@mipmap/perfect_hit10" android:duration="100"/>
+    <item android:drawable="@mipmap/perfect_hit11" android:duration="100"/>
+    <item android:drawable="@mipmap/perfect_hit12" android:duration="100"/>
+    <item android:drawable="@mipmap/perfect_hit13" android:duration="100"/>
+    <item android:drawable="@mipmap/perfect_hit14" android:duration="100"/>
+    <item android:drawable="@mipmap/perfect_hit15" android:duration="100"/>
+    <item android:drawable="@mipmap/perfect_hit16" android:duration="100"/>
+    <item android:drawable="@mipmap/perfect_hit17" android:duration="100"/>
+    <item android:drawable="@mipmap/perfect_hit18" android:duration="100"/>
+    <item android:drawable="@mipmap/perfect_hit19" android:duration="100"/>
+    <item android:drawable="@mipmap/perfect_hit20" android:duration="100"/>
+    <item android:drawable="@mipmap/perfect_hit21" android:duration="100"/>
+    <item android:drawable="@mipmap/perfect_hit22" android:duration="100"/>
+    <item android:drawable="@mipmap/perfect_hit23" android:duration="100"/>
 
 </animation-list>

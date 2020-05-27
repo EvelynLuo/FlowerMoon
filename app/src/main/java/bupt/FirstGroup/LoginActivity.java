@@ -13,10 +13,14 @@ import android.widget.Toast;
 import android.os.Looper;
 import android.util.Log;
 
+import java.sql.SQLException;
+
+import bupt.FirstGroup.models.UserDao;
+
 public class LoginActivity extends AppCompatActivity {
-    private static final String TAG = "TRY";
+    private static final String TAG = "mysql";
     private EditText name;
-    private EditText password,phoneNumber;
+    private EditText password;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -25,7 +29,6 @@ public class LoginActivity extends AppCompatActivity {
 
         name = findViewById(R.id.name);
         password = findViewById(R.id.password);
-        phoneNumber = findViewById(R.id.phone);
     }
 
     //用户根据点击事件来找到相应的功能
@@ -37,13 +40,27 @@ public class LoginActivity extends AppCompatActivity {
                     public void run() {
                         String n = name.getText().toString().trim();
                         String psw = password.getText().toString().trim();
-                        String phone = phoneNumber.getText().toString().trim();      //添加inputText
-                        DBConnection db = new DBConnection();
-                        String result = db.logUp(n,phone,psw);
-                        Looper.prepare();
-                        Toast toast = Toast.makeText(LoginActivity.this, result, Toast.LENGTH_SHORT);
-                        toast.show();
-                        Looper.loop();
+                        UserDao ud = new UserDao();
+                        boolean result = false;
+                        try {
+                            result = ud.register(n, psw);
+                        } catch (ClassNotFoundException e) {
+                            e.printStackTrace();
+                        } catch (InstantiationException e) {
+                            e.printStackTrace();
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                        if (!result) {
+                            Looper.prepare();
+                            Toast toast = Toast.makeText(LoginActivity.this, "注册成功！", Toast.LENGTH_SHORT);
+                            toast.show();
+                            Looper.loop();
+                        }
+                        Log.i(TAG, "fun" + result);
+
                         //以上为jdbc注册
                     }
                 }).start();
@@ -60,18 +77,25 @@ public class LoginActivity extends AppCompatActivity {
                             toast.show();
                             Looper.loop();
                         }
-                        DBConnection db = new DBConnection();
-                        String result = db.logIn(n,psw);
-                        Looper.prepare();
-                        Toast toast = Toast.makeText(LoginActivity.this, result, Toast.LENGTH_SHORT);
-                        toast.show();
-                        Looper.loop();
-                        if(result.equals("登录成功")){
-                        //一下代码为跳转界面
-                         Intent intent=new Intent(LoginActivity.this, MainActivity.class);
-                        //intent.putExtra("name",n);
-                        startActivity(intent);
+                        UserDao ud = new UserDao();
+                        Boolean result = ud.login(n, psw);
+                        if (!result) {
+                            Looper.prepare();
+                            Toast toast = Toast.makeText(LoginActivity.this, "用户名不存在或密码错误！", Toast.LENGTH_SHORT);
+                            toast.show();
+                            Looper.loop();
+                        } else {
+                            Looper.prepare();
+                            Toast toast = Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT);
+                            toast.show();
+
+                            //一下代码为跳转界面
+                            Intent intent=new Intent(LoginActivity.this, HighscoreActivity.class);
+                            //intent.putExtra("name",n);
+                            startActivity(intent);
+                            Looper.loop();
                         }
+
                         //以上为jdbc登录
                     }
                 }).start();

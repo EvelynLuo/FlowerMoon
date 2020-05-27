@@ -31,7 +31,7 @@ public class RTFastRenderView extends SurfaceView implements Runnable {
     }
 
     public void run() {
-//        Rect dstRect = new Rect(0,0,2357,1312);
+//      Rect dstRect = new Rect(0,0,2357,1312);
         Rect dstRect=new Rect();
         long startTime = System.nanoTime();
         while(running) {

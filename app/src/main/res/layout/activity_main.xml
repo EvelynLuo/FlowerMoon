@@ -11,7 +11,7 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="bupt.FirstGroup.MainActivity"
     android:orientation="vertical"
-    android:background="@drawable/background1">
+    android:background="@mipmap/background1">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,14 +25,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@drawable/level1clicked"/>
+            android:background="@mipmap/level1clicked"/>
 
         <ImageButton
             android:id="@+id/main_second_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
-            android:background="@drawable/level2clicked"/>
+            android:background="@mipmap/level2clicked"/>
 
         <ImageButton
             android:id="@+id/main_third_button"
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/level3clicked"/>
+            android:background="@mipmap/level3clicked"/>
 
     </LinearLayout>
 
@@ -55,14 +55,14 @@
             android:id="@+id/main_about_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/about1"/>
+            android:background="@mipmap/about1"/>
 
         <ImageButton
             android:id="@+id/main_start_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:background="@drawable/start_btn1" />
+            android:background="@mipmap/start_btn1" />
 
         <ImageButton
             android:id="@+id/main_highscore_button"
@@ -70,7 +70,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/score1"/>
+            android:background="@mipmap/score1"/>
 
     </LinearLayout>
 
